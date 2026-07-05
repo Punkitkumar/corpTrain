@@ -1,17 +1,19 @@
 /* ===== CSS Variables ===== */
 :root {
-  --purple: #B640BB;
-  --purple-hover: #9a3599;
-  --blue: #046bd2;
-  --blue-hover: #045cb4;
+  --purple: #7c6efa;
+  --purple-hover: #6b5ce7;
+  --blue: #60a5fa;
+  --blue-hover: #3b82f6;
+  --green: #22c55e;
+  --dark: #2a2a45;
   --text-dark: #1e293b;
   --text-body: #334155;
-  --text-muted: #94a3b8;
-  --bg-light: #f9fafb;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
   --bg-white: #ffffff;
   --border-light: #e2e8f0;
   --container: 1200px;
-  --font: 'Lexend', sans-serif;
+  --font: 'Inter', 'Lexend', sans-serif;
 }
 
 /* ===== Reset & Base ===== */
@@ -101,11 +103,37 @@ ul {
   gap: 16px;
 }
 
+.btn-primary {
+  background-color: var(--purple);
+}
+
+.btn-primary:hover {
+  background-color: var(--purple-hover);
+}
+
 .logo {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text-dark);
   flex-shrink: 0;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+}
+
+.logo-text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo-text {
+    display: inline;
+  }
 }
 
 .logo:hover {
@@ -301,7 +329,7 @@ body.no-scroll {
 
 /* ===== Inner Page Layout ===== */
 .page-hero {
-  background-image: url('../assets/images/bg-1.png');
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 80px 0;
@@ -508,7 +536,7 @@ body.no-scroll {
   margin: 0 auto 20px;
 }
 .hero {
-  background-image: url('../assets/images/bg-1.png');
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 0;
@@ -625,29 +653,26 @@ body.no-scroll {
   color: #fff;
 }
 
-/* ===== Why Hitesh ===== */
-.why-hitesh {
+/* ===== Why Founder ===== */
+.why-founder {
   position: relative;
   background: var(--bg-white);
 }
 
-.why-hitesh::before {
+.why-founder::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/pattern-7.jpg');
-  background-position: center;
-  background-size: cover;
-  opacity: 0.54;
+  background: linear-gradient(135deg, rgba(124, 110, 250, 0.04) 0%, rgba(96, 165, 250, 0.04) 100%);
   pointer-events: none;
 }
 
-.why-hitesh .container {
+.why-founder .container {
   position: relative;
   z-index: 1;
 }
 
-.why-hitesh-grid {
+.why-founder-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -670,7 +695,7 @@ body.no-scroll {
   flex-shrink: 0;
 }
 
-.why-hitesh-image img {
+.why-founder-image img {
   width: 100%;
 }
 
@@ -752,9 +777,7 @@ body.no-scroll {
 
 /* ===== Training Gallery ===== */
 .training-gallery {
-  background-image: url('../assets/images/pattern-7.jpg');
-  background-position: center;
-  background-size: cover;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
   padding: 80px 15px;
 }
 
@@ -924,35 +947,7 @@ body.no-scroll {
   font-style: italic;
 }
 
-/* ===== WhatsApp Float ===== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  z-index: 999;
-}
-
-.whatsapp-float a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #e4e4e4;
-  color: rgba(0, 0, 0, 0.6);
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s;
-}
-
-.whatsapp-float a:hover {
-  transform: scale(1.05);
-}
-
-.whatsapp-float img {
-  width: 32px;
-  height: 32px;
-}
+/* whatsapp removed — using topmate-float in layout.js */
 
 /* ===== Scroll to Top ===== */
 .scroll-top {
@@ -984,16 +979,163 @@ body.no-scroll {
 
 /* ===== Footer ===== */
 .footer {
-  background: var(--bg-white);
-  border-top: 1px solid var(--border-light);
-  padding: 20px 0;
+  background: var(--dark);
+  color: #cbd5e1;
+  padding: 48px 0 24px;
+  border-top: none;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   text-align: center;
-  font-size: 16px;
-  color: var(--text-body);
-  min-height: 80px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.footer-logo {
+  height: 32px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+}
+
+.footer-links a {
+  color: #a5b4fc;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+/* ===== Topmate Float ===== */
+.topmate-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  background: var(--purple);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(124, 110, 250, 0.4);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.topmate-float:hover {
+  transform: scale(1.04);
+  background: var(--purple-hover);
+  color: #fff;
+}
+
+/* ===== Challenge Card ===== */
+.challenge-card {
+  background: var(--dark);
+  color: #e2e8f0;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 40px 0;
+  border: 1px solid rgba(124, 110, 250, 0.3);
+}
+
+.challenge-card .badge {
+  display: inline-block;
+  background: rgba(124, 110, 250, 0.2);
+  color: #a5b4fc;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.challenge-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.challenge-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.challenge-tags span {
+  background: rgba(255,255,255,0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.hero-dark {
+  background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+  color: #fff;
+}
+
+.hero-dark h1 {
+  color: #fff;
+}
+
+.hero-dark .hero-desc {
+  color: #cbd5e1;
+}
+
+.profile-img {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-item .num {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.stat-item .label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ===== Responsive ===== */
@@ -1067,7 +1209,7 @@ body.no-scroll {
     font-size: 24px;
   }
 
-  .why-hitesh-grid {
+  .why-founder-grid {
     grid-template-columns: 1fr;
   }
 

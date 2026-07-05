@@ -1,21 +1,22 @@
 (function () {
+  const TOPMATE_URL = 'https://topmate.io/souvenger';
+  const COGNITION_URL = 'https://www.cognitioncatalysts.com/';
+
   const NAV_ITEMS = [
-    { label: 'Generative AI training', href: 'generative-ai-trainer-expert.html' },
-    { label: 'Service', href: 'service.html' },
-    { label: 'Chat GPT Training', href: 'chat-gpt-trainer-coach.html' },
-    { label: 'Claude AI training', href: 'claude-ai-training-course.html' },
-    { label: 'AI program', href: 'ai-program.html' },
+    { label: 'About', href: 'about.html' },
+    { label: 'Cognition Catalysts', href: 'cognition-catalysts.html' },
+    { label: 'AI Consulting', href: 'ai-consulting.html' },
+    { label: 'Corporate AI Training', href: 'corporate-ai-training.html' },
+    { label: 'Services', href: 'service.html' },
     { label: 'Contact', href: 'contact.html' },
     {
-      label: 'Courses',
+      label: 'More',
       href: '#',
       children: [
-        { label: 'Corporate Training', href: 'corporate-training-for-digital-marketing.html' },
-        { label: 'AI training', href: 'ai-training.html' },
-        { label: 'Digital Marketing Course', href: 'digital-marketing-course.html' },
-        { label: 'Social Media Marketing Course', href: 'social-media-marketing-course.html' },
-        { label: 'Digital Marketing Consultant & Expert', href: 'digital-marketing-consultant.html' },
-        { label: 'About', href: 'about.html' },
+        { label: 'Mentorship', href: 'mentorship.html' },
+        { label: 'Interview Prep', href: 'interview-prep.html' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/souvenger/', external: true },
+        { label: 'Cognition Catalysts Platform', href: COGNITION_URL, external: true },
       ],
     },
   ];
@@ -43,7 +44,10 @@
           </button>
           <a href="#" class="nav-link desktop-only${childActive ? ' active' : ''}">${item.label} <span class="submenu-arrow">▾</span></a>
           <ul class="sub-menu">
-            ${item.children.map(c => `<li><a href="${c.href}" class="${isActive(c.href) ? 'active' : ''}">${c.label}</a></li>`).join('')}
+            ${item.children.map(c => {
+              const ext = c.external ? ' target="_blank" rel="noopener"' : '';
+              return `<li><a href="${c.href}" class="${isActive(c.href) ? 'active' : ''}"${ext}>${c.label}</a></li>`;
+            }).join('')}
           </ul>
         </li>`;
     }
@@ -58,11 +62,14 @@
     <header class="header">
       <div class="header-bar">
         <div class="container header-bar-inner">
-          <a href="index.html" class="logo">Hitesh Motwani</a>
+          <a href="index.html" class="logo">
+            <img src="assets/images/cognition-catalysts-logo.svg" alt="Cognition Catalysts" class="logo-img">
+            <span class="logo-text">Cognition Catalysts</span>
+          </a>
           <nav class="nav-desktop" aria-label="Main navigation">
             <ul>${navDesktop}</ul>
           </nav>
-          <a href="https://calendly.com/hitesh-analyst/online-consulting" class="btn btn-sm btn-blue header-cta" target="_blank" rel="noopener">Book A Call</a>
+          <a href="${TOPMATE_URL}" class="btn btn-sm btn-primary header-cta" target="_blank" rel="noopener">Book a Session</a>
           <button class="menu-toggle" type="button" aria-label="Menu Toggle" aria-expanded="false" aria-controls="nav-mobile">
             <svg class="icon-open" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
             <svg class="icon-close" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -78,16 +85,25 @@
   function renderFooter() {
     return `
     <footer class="footer">
-      <div class="container">
-        <p>&copy; ${new Date().getFullYear()} Hitesh Motwani. All rights reserved.</p>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/cognition-catalysts-logo.svg" alt="Cognition Catalysts" class="footer-logo">
+          <p>AI engineering practice platform &amp; consulting by Sourav Dey</p>
+        </div>
+        <div class="footer-links">
+          <a href="about.html">About Sourav</a>
+          <a href="cognition-catalysts.html">Platform</a>
+          <a href="${COGNITION_URL}" target="_blank" rel="noopener">cognitioncatalysts.com</a>
+          <a href="https://www.linkedin.com/in/souvenger/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="${TOPMATE_URL}" target="_blank" rel="noopener">Topmate</a>
+        </div>
+        <p class="footer-copy">&copy; ${new Date().getFullYear()} Cognition Catalysts · Sourav Dey. All rights reserved.</p>
       </div>
     </footer>
-    <div class="whatsapp-float">
-      <a href="https://web.whatsapp.com/send?phone=919892414313&text=I%20want%20to%20get%20in%20touch%20with%20Hitesh" target="_blank" rel="noopener noreferrer">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="#25D366"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.825.738 5.488 2.025 7.788L0 32l8.45-2.012C10.675 31.262 13.275 32 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.25c-2.475 0-4.8-.675-6.788-1.838l-.488-.288-5.025 1.2 1.237-4.875-.313-.5A13.2 13.2 0 012.75 16C2.75 8.138 8.638 2.25 16 2.25S29.25 8.138 29.25 16 23.362 29.25 16 29.25zm7.313-9.862c-.375-.188-2.213-1.088-2.55-1.213-.338-.125-.587-.188-.838.188-.25.375-.963 1.213-1.175 1.463-.213.25-.425.275-.788.088-.363-.188-1.525-.562-2.9-1.788-1.075-.95-1.8-2.125-2.012-2.488-.213-.363-.025-.562.162-.738.163-.163.363-.425.538-.638.175-.213.238-.363.363-.6.125-.238.062-.45-.025-.638-.088-.188-.838-2.013-1.15-2.75-.3-.713-.613-.613-.838-.625-.213-.012-.463-.012-.713-.012s-.65.088-.988.45c-.338.363-1.288 1.263-1.288 3.075s1.313 3.563 1.5 3.813c.188.25 2.575 3.925 6.238 5.5.875.375 1.55.6 2.075.775.875.275 1.663.238 2.288.15.7-.1 2.213-.9 2.525-1.775.313-.875.313-1.625.213-1.775-.1-.15-.35-.238-.725-.425z"/></svg>
-        WhatsApp me
-      </a>
-    </div>
+    <a href="${TOPMATE_URL}" class="topmate-float" target="_blank" rel="noopener noreferrer" aria-label="Book on Topmate">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Book on Topmate
+    </a>
     <button class="scroll-top" aria-label="Scroll to Top" type="button">↑</button>`;
   }
 

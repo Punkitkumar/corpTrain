@@ -1,0 +1,42 @@
+<svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>CognitionCatalysts Logo</title>
+  <desc>Horizontal logo with neural node icon and wordmark</desc>
+
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C6AF7"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C6AF7"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Neural node icon centered at (40, 40) -->
+  <g transform="translate(40, 40)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7C6AF733" stroke-width="1"/>
+    <!-- Cross connectors (background) -->
+    <line x1="0" y1="-18" x2="15" y2="9" stroke="#ffffff" stroke-width="0.5" opacity="0.12"/>
+    <line x1="0" y1="-18" x2="-15" y2="9" stroke="#ffffff" stroke-width="0.5" opacity="0.12"/>
+    <line x1="15" y1="9" x2="-15" y2="9" stroke="#ffffff" stroke-width="0.5" opacity="0.12"/>
+    <!-- Connector lines -->
+    <line x1="0" y1="-7" x2="0" y2="-14" stroke="#A855F7" stroke-width="1.2" opacity="0.8"/>
+    <line x1="6" y1="3.5" x2="11" y2="6.5" stroke="#7C6AF7" stroke-width="1.2" opacity="0.8"/>
+    <line x1="-6" y1="3.5" x2="-11" y2="6.5" stroke="#06B6D4" stroke-width="1.2" opacity="0.8"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="7" fill="url(#g1)"/>
+    <!-- Orbiting nodes -->
+    <circle cx="0" cy="-20" r="4.5" fill="#A855F7"/>
+    <circle cx="17" cy="10" r="4.5" fill="#7C6AF7"/>
+    <circle cx="-17" cy="10" r="4.5" fill="#06B6D4"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="82" y="34" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.04em" fill="#F0EFFE">Cognition</text>
+  <text x="82" y="58" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.04em" fill="url(#g1)">Catalysts</text>
+
+  <!-- Tagline -->
+  <text x="83" y="73" font-family="'Inter', system-ui, sans-serif" font-size="9" fill="#4B4868" letter-spacing="0.09em">MASTER AI ENGINEERING</text>
+</svg>

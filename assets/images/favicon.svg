@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><title>CognitionCatalysts Icon</title><defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C6AF7"></stop>
+      <stop offset="100%" stop-color="#A855F7"></stop>
+    </linearGradient>
+  </defs><g transform="translate(40, 40)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#7C6AF733" stroke-width="1"></circle>
+    <line x1="0" y1="-18" x2="15" y2="9" stroke="#ffffff" stroke-width="0.5" opacity="0.12"></line>
+    <line x1="0" y1="-18" x2="-15" y2="9" stroke="#ffffff" stroke-width="0.5" opacity="0.12"></line>
+    <line x1="15" y1="9" x2="-15" y2="9" stroke="#ffffff" stroke-width="0.5" opacity="0.12"></line>
+    <line x1="0" y1="-7" x2="0" y2="-14" stroke="#A855F7" stroke-width="1.2" opacity="0.8"></line>
+    <line x1="6" y1="3.5" x2="11" y2="6.5" stroke="#7C6AF7" stroke-width="1.2" opacity="0.8"></line>
+    <line x1="-6" y1="3.5" x2="-11" y2="6.5" stroke="#06B6D4" stroke-width="1.2" opacity="0.8"></line>
+    <circle cx="0" cy="0" r="7" fill="url(#g1)"></circle>
+    <circle cx="0" cy="-20" r="4.5" fill="#A855F7"></circle>
+    <circle cx="17" cy="10" r="4.5" fill="#7C6AF7"></circle>
+    <circle cx="-17" cy="10" r="4.5" fill="#06B6D4"></circle>
+  </g></svg>

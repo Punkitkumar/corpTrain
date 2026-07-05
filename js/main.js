@@ -136,11 +136,10 @@ function initContactForm() {
       return;
     }
 
-    const subject = encodeURIComponent(`Contact from ${name} - ${purpose}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nPurpose: ${purpose}`);
-    window.location.href = `mailto:contact@hiteshmotwani.com?subject=${subject}&body=${body}`;
-
-    if (msg) { msg.textContent = 'Opening your email client...'; msg.className = 'form-message success'; }
+    if (msg) { msg.textContent = 'Thank you! Redirecting to book a session on Topmate...'; msg.className = 'form-message success'; }
+    setTimeout(() => {
+      window.open('https://topmate.io/souvenger', '_blank');
+    }, 1500);
     form.reset();
   });
 }
